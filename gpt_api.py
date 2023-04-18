@@ -40,7 +40,7 @@ def imitate_style(user_texts):
                        "-You need to match the capitalization choices and grammar style of the examples. "
                        "-Pay close attention to the spirit, vibe, and sentiment of the submitted works. "
                        "-May sure your subject matter fits in well with the provided examples. "
-                       "-Do not reuse any phrases from the examples. "
+                       "-Do not reuse any specific phrases or wording from the examples. "
                        "-Do not respond with anything but the imitation itself. "
                        "-Only respond with one new work of writing. "
                        "-Please match the length of the provided examples and be concise if necessary. "
