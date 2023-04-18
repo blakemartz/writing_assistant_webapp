@@ -54,7 +54,8 @@
                     }),
                     success: function (response) {
                         // Update the result container with the generated text
-                        $("#result").html(response.generated_text);
+                        let formattedText = response.generated_text.replace(/\n/g, '<br>');
+                        $("#result").html(formattedText);
                         $("#loader").addClass("hidden");
                     }
                 });
