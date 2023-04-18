@@ -61,10 +61,3 @@ def imitate_style(user_texts):
     generated_text = generate_text(chat_thread=chat_thread, api_key=os.environ["OPENAI_API_KEY"])
 
     return generated_text
-
-# # output generated text
-# if generated_text:
-#     print(f"{generated_text}")
-#
-# # Update the chat thread with the generated text
-# chat_thread.append({"role": "assistant", "content": generated_text})

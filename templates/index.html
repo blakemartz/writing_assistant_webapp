@@ -9,16 +9,27 @@
 <body>
     <div class="container">
         <h1>StyleSync</h1>
-        <form id="text-input-form">
-            {% for i in range(1, num_text_inputs + 1) %}
-            <div class="form-group">
-                <label for="text-input-{{ i }}">Sample Text {{ i }}</label>
-                <textarea class="form-control" id="text-input-{{ i }}" rows="3"></textarea>
+        <div class="app-wrapper">
+            <div class="text-input-section">
+                <form id="text-input-form">
+                    {% for i in range(1, num_text_inputs + 1) %}
+                    <div class="form-group">
+                        <label for="text-input-{{ i }}">Sample Text {{ i }}</label>
+                        <textarea class="form-control" id="text-input-{{ i }}" rows="3"></textarea>
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-            {% endfor %}
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <div id="result"></div>
+            <div class="output-section">
+                <div class="result-window">
+                    <div id="result"></div>
+                    <div id="loader" class="loader hidden">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading...">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -31,6 +42,9 @@
                 text_inputs.push($("#text-input-{{ i }}").val());
                 {% endfor %}
 
+                $("#loader").removeClass("hidden");
+                $("#result").html("");
+
                 $.ajax({
                     type: "POST",
                     url: "{{ url_for('submit') }}",
@@ -41,6 +55,7 @@
                     success: function (response) {
                         // Update the result container with the generated text
                         $("#result").html(response.generated_text);
+                        $("#loader").addClass("hidden");
                     }
                 });
             });

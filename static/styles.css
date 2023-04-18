@@ -27,9 +27,36 @@ button:hover {
   background-color: #555;
 }
 
-.result {
-  margin-top: 20px;
+.app-wrapper {
+  display: flex;
+}
+
+.text-input-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.output-section {
+  flex: 1;
+}
+
+.result-window {
+  position: relative;
+  height: 100%;
   padding: 20px;
   background-color: #f4f4f4;
   border: 1px solid #ddd;
+  min-height: 300px;
+  overflow-y: auto;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
 }
