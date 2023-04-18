@@ -12,13 +12,16 @@
         <div class="app-wrapper">
             <div class="text-input-section">
                 <form id="text-input-form">
-                    {% for i in range(1, num_text_inputs + 1) %}
-                    <div class="form-group">
-                        <label for="text-input-{{ i }}">Sample Text {{ i }}</label>
-                        <textarea class="form-control" id="text-input-{{ i }}" rows="3"></textarea>
+                    <div id="text-input-container">
+                        {% for i in range(1, num_text_inputs + 1) %}
+                        <div class="form-group">
+                            <label for="text-input-{{ i }}">Sample Text {{ i }}</label>
+                            <textarea class="form-control" id="text-input-{{ i }}" rows="3"></textarea>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" id="add-sample" class="btn btn-secondary">Add Sample</button>
                 </form>
             </div>
             <div class="output-section">
@@ -34,13 +37,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
+            let sampleCount = {{ num_text_inputs }};
+
             $("#text-input-form").submit(function (event) {
                 event.preventDefault();
 
                 let text_inputs = [];
-                {% for i in range(1, num_text_inputs + 1) %}
-                text_inputs.push($("#text-input-{{ i }}").val());
-                {% endfor %}
+                for (let i = 1; i <= sampleCount; i++) {
+                    text_inputs.push($("#text-input-" + i).val());
+                }
 
                 $("#loader").removeClass("hidden");
                 $("#result").html("");
@@ -59,6 +64,16 @@
                         $("#loader").addClass("hidden");
                     }
                 });
+            });
+
+            $("#add-sample").click(function() {
+                sampleCount++;
+                const newFormGroup = `
+                    <div class="form-group">
+                        <label for="text-input-${sampleCount}">Sample Text ${sampleCount}</label>
+                        <textarea class="form-control" id="text-input-${sampleCount}" rows="3"></textarea>
+                    </div>`;
+                $("#text-input-container").append(newFormGroup);
             });
         });
     </script>

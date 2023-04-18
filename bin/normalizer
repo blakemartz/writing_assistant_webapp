@@ -1,4 +1,4 @@
-#!/Users/blaek/myproject/bin/python
+#!/Users/blaek/writing_assistant/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -6,7 +6,7 @@ load_dotenv()
 
 MODEL = "gpt-3.5-turbo"
 MAX_TOKENS = 1000
-TEMPERATURE = 0.8
+TEMPERATURE = 1.0
 
 
 def generate_text(chat_thread, api_key):
@@ -38,9 +38,12 @@ def imitate_style(user_texts):
                        "-Take great care to learn from the provided examples "
                        "and capture the grammar usage, phrasing style, and creative style. "
                        "-You need to match the capitalization choices and grammar style of the examples. "
-                       "-Pay close attention to the spirit, vibe, and sentiment of the submitted works. "
-                       "-May sure your subject matter fits in well with the provided examples. "
-                       "-Do not reuse any specific phrases or wording from the examples. "
+                       "-Don't rhyme too much. "
+                       "-If you must rhyme, match the complexity of the example text's rhyming patterns. "
+                       "-Pay close attention to the tone, vibe, and sentiment of the example texts. "
+                       "-If the examples are sad, your result should be sad. "
+                       "-May sure you choose subject matter that fits in well with the provided examples. "
+                       "-Be especially careful to not re-use any specific phrases from the examples. "
                        "-Do not respond with anything but the imitation itself. "
                        "-Only respond with one new work of writing. "
                        "-Please match the length of the provided examples and be concise if necessary. "
@@ -49,12 +52,11 @@ def imitate_style(user_texts):
 
     # Add user texts to the chat thread
     for sample in user_texts:
-        chat_thread.append({"role": "user", "content": sample})
+        chat_thread.append({"role": "user", "content": f"This is an example text: \n{sample}"})
 
     # Generate new writing call to the model - add to chat thread
     chat_thread.append({"role": "user", "content": "Generate a creative new text that imitates and matches the style "
                                                    "of the provided examples as instructed. "
-                                                   "Be as concise as the examples."
                         })
 
     # Call the helper function to generate new text
