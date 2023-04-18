@@ -3,21 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writing Assistant</title>
+    <title>StyleSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>~StyleSync~</h1>
-    <form action="/submit" method="post">
-        <label for="text_input1">Enter your first text sample:</label>
-        <textarea name="text_input1" id="text_input1" rows="10" cols="50"></textarea>
-        <br>
-        <label for="text_input2">Enter your second text sample:</label>
-        <textarea name="text_input2" id="text_input2" rows="10" cols="50"></textarea>
-        <br>
-        <label for="text_input3">Enter your third text sample:</label>
-        <textarea name="text_input3" id="text_input3" rows="10" cols="50"></textarea>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+        <h1>StyleSync</h1>
+        <form id="text-input-form">
+            {% for i in range(1, num_text_inputs + 1) %}
+            <div class="form-group">
+                <label for="text-input-{{ i }}">Sample Text {{ i }}</label>
+                <textarea class="form-control" id="text-input-{{ i }}" rows="3"></textarea>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#text-input-form").submit(function (event) {
+                event.preventDefault();
+
+                let text_inputs = [];
+                {% for i in range(1, num_text_inputs + 1) %}
+                text_inputs.push($("#text-input-{{ i }}").val());
+                {% endfor %}
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ url_for('submit') }}",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        text_inputs: text_inputs
+                    }),
+                    success: function (response) {
+                        // Update the result container with the generated text
+                        $("#result").html(response.generated_text);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

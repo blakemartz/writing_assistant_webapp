@@ -1,9 +1,8 @@
+import os
+import openai
 from dotenv import load_dotenv
 
 load_dotenv()
-
-import os
-import openai
 
 MODEL = "gpt-3.5-turbo"
 MAX_TOKENS = 1000
@@ -35,12 +34,13 @@ def imitate_style(user_texts):
             "role": "system",
             "content": "You are a creative and talented imitation agent that can analyze example texts "
                        "and generate a completely new text as if it is the user's own writing. "
+                       "-The user will provide you will examples to study. "
                        "-Take great care to learn from the provided examples "
                        "and capture the grammar usage, phrasing style, and creative style. "
                        "-You need to match the capitalization choices and grammar style of the examples. "
                        "-Pay close attention to the spirit, vibe, and sentiment of the submitted works. "
                        "-May sure your subject matter fits in well with the provided examples. "
-                       "-Do not reuse any specific phrases from the examples. "
+                       "-Do not reuse any phrases from the examples. "
                        "-Do not respond with anything but the imitation itself. "
                        "-Only respond with one new work of writing. "
                        "-Please match the length of the provided examples and be concise if necessary. "

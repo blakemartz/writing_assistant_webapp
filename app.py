@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from gpt_api import imitate_style
 
 app = Flask(__name__)
@@ -6,21 +6,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
-
+    num_text_inputs = 3
+    return render_template('index.html', num_text_inputs=num_text_inputs)
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    user_texts = []
-    for i in range(1, 4):  # Adjust the range based on the number of textarea inputs
-        user_sample = request.form.get(f'text_input{i}')
-        if user_sample:
-            user_texts.append(f"The following is a writing example: '{user_sample}'")
+    data = request.get_json()
+    user_texts = data.get('text_inputs', [])
 
     # Call the imitate_style function with user_texts as a parameter
     generated_text = imitate_style(user_texts)
 
-    return generated_text
+    return jsonify(generated_text=generated_text)
 
 
 if __name__ == '__main__':
