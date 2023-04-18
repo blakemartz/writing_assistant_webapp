@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9d5349e-1580-44ba-8168-3bdd5c05d8ee" name="Changes" comment="Fix UI" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f0ce92af-53e5-4024-a2de-5c9300c31761" />
+        <option name="url" value="https://github.com/blakemartz/writing_assistant_webapp.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OZOYLSUtv7Yv3dpLeuLijazHJl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/blaek/myproject&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9d5349e-1580-44ba-8168-3bdd5c05d8ee" name="Changes" comment="" />
+      <created>1681764683222</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681764683222</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1681783049236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681783049237</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update UI with css and JS.&#10;&#10;add styles.css,&#10;update index.html with JS, &#10;update app.py to work with json data&#10;bug fixes in all files&#10;small prompting tweaks in gpt_api.py&#10;&#10;currently working">
+      <created>1681785418170</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681785418170</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update gpt_api system prompt&#10;&#10;Many changes were demoed but this is very close to the original and still working the best.">
+      <created>1681838310047</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681838310047</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update ui&#10;&#10;update index.html and styles.css to add loading wheel and window for generated text">
+      <created>1681845825895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681845825895</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Commit additional project and venv files">
+      <created>1681846304674</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681846304674</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fix margin right on text input">
+      <created>1681850299391</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681850299391</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix UI">
+      <created>1681852731616</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681852731616</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <MESSAGE value="Update UI with css and JS.&#10;&#10;add styles.css,&#10;update index.html with JS, &#10;update app.py to work with json data&#10;bug fixes in all files&#10;small prompting tweaks in gpt_api.py&#10;&#10;currently working" />
+    <MESSAGE value="Update gpt_api system prompt&#10;&#10;Many changes were demoed but this is very close to the original and still working the best." />
+    <MESSAGE value="Update ui&#10;&#10;update index.html and styles.css to add loading wheel and window for generated text" />
+    <MESSAGE value="Commit additional project and venv files" />
+    <MESSAGE value="Fix margin right on text input" />
+    <MESSAGE value="Fix UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix UI" />
+  </component>
+</project>
