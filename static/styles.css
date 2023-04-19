@@ -120,7 +120,7 @@ button:hover {
 }
 
 .btn-demo {
-  color: #333;
+  color: #ccc;
   font-weight: 500;
   font-size: 1rem;
   font-family: inherit;
@@ -133,7 +133,6 @@ button:hover {
 }
 
 .btn-demo:hover {
-  color: #000;
   text-decoration: underline;
 }
 
