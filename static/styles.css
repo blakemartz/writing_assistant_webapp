@@ -3,15 +3,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 576px) {
-  .text-input-section {
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-  .output-section {
-    margin-top: 40px;
-  }
-}
+
 
 body {
   font-family: 'Poppins', Arial, sans-serif;
@@ -117,6 +109,32 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.demo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.btn-demo {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.3s;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  background-image: none;
+}
+
+.btn-demo:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 .hidden {

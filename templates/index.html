@@ -22,15 +22,17 @@
                         {% endfor %}
                     </div>
                     <div class="button-container">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="button" id="demo-samples" class="btn btn-secondary">Demo Samples</button>
-                        <button type="button" id="add-sample" class="btn btn-secondary">+ Samples</button>
+                        <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+                        <button type="button" id="add-sample" class="btn btn-secondary">+</button>
                     </div>
                 </form>
             </div>
             <div class="output-section">
                 <label for="result">Generated Text</label>
                 <div class="result-window">
+                    <div class="demo-container">
+                        <button type="button" id="demo-samples" class="btn-demo">Demo</button>
+                    </div>
                     <div id="result"></div>
                     <div id="loader" class="loader hidden">
                         <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading...">
@@ -66,6 +68,8 @@
             $("#text-input-form").submit(function (event) {
                 event.preventDefault();
 
+                $("#demo-samples").remove();
+
                 let text_inputs = [];
                 for (let i = 1; i <= sampleCount; i++) {
                     text_inputs.push($("#text-input-" + i).val());
@@ -99,17 +103,21 @@
                     </div>`;
                 $("#text-input-container").append(newFormGroup);
             });
-
+            
             $("#demo-samples").click(function() {
                 const demoSamples = [
                     predefinedSamples.sample1,
                     predefinedSamples.sample2,
                     predefinedSamples.sample3
                 ];
-
+                
+                // Populate the input fields with demo samples
                 for (let i = 1; i <= demoSamples.length; i++) {
                     $("#text-input-" + i).val(demoSamples[i - 1]);
                 }
+                
+                // Trigger a click event on the submit button to submit the form
+                $("#submit-btn").trigger("click");
             });
 
         });
