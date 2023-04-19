@@ -38,8 +38,6 @@ def imitate_style(user_texts):
                        "-Take great care to learn from the provided examples "
                        "and capture the grammar usage, phrasing style, and creative style. "
                        "-You need to match the capitalization choices and grammar style of the examples. "
-                       "-Don't rhyme too much. "
-                       "-If you must rhyme, match the complexity of the example text's rhyming patterns. "
                        "-Pay close attention to the tone, vibe, and sentiment of the example texts. "
                        "-If the examples are sad, your result should be sad. "
                        "-May sure you choose subject matter that fits in well with the provided examples. "
