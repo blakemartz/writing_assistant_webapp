@@ -15,7 +15,7 @@ body {
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 40px; /* Updated padding */
+  padding: 20px 40px;
 }
 
 /* Page title */
@@ -25,7 +25,7 @@ h1 {
   color: #fff;
   margin-bottom: 40px;
   padding: 20px 0;
-  background-color: #5b75f5;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
@@ -46,7 +46,7 @@ textarea {
 }
 
 button {
-  background-color: #5b75f5;
+  background-color: transparent;
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -56,10 +56,11 @@ button {
   font-size: 1rem;
   font-family: inherit;
   transition: background-color 0.3s;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Updated gradient color */
 }
 
 button:hover {
-  background-color: #4a61d4;
+  filter: brightness(110%);
 }
 
 /* Layout */
@@ -72,14 +73,14 @@ button:hover {
   flex: 1;
   min-width: 300px;
   margin-right: 40px;
-  margin-left: 20px; /* Added margin */
+  margin-left: 20px;
 }
 
 .output-section {
   flex: 1;
   min-width: 300px;
   overflow-y: auto;
-  margin-right: 20px; /* Added margin */
+  margin-right: 20px;
 }
 
 /* Result window */
