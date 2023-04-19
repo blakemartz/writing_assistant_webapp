@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from gpt_api import imitate_style
-from excerpts import BOB, WELCOME
+from welcome import WELCOME
 
 app = Flask(__name__)
 
