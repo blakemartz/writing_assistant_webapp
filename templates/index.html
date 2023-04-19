@@ -23,7 +23,8 @@
                     </div>
                     <div class="button-container">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="button" id="add-sample" class="btn btn-secondary">More Samples</button>
+                        <button type="button" id="demo-samples" class="btn btn-secondary">Demo Samples</button>
+                        <button type="button" id="add-sample" class="btn btn-secondary">+ Samples</button>
                     </div>
                 </form>
             </div>
@@ -38,6 +39,7 @@
             </div>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='demoSamples.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -97,6 +99,19 @@
                     </div>`;
                 $("#text-input-container").append(newFormGroup);
             });
+
+            $("#demo-samples").click(function() {
+                const demoSamples = [
+                    predefinedSamples.sample1,
+                    predefinedSamples.sample2,
+                    predefinedSamples.sample3
+                ];
+
+                for (let i = 1; i <= demoSamples.length; i++) {
+                    $("#text-input-" + i).val(demoSamples[i - 1]);
+                }
+            });
+
         });
     </script>
 </body>
