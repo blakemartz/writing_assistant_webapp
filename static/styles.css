@@ -49,6 +49,7 @@ textarea {
 
 button {
   background-color: transparent;
+  width: 100%;
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -87,7 +88,7 @@ button:hover {
 .add-sample-container {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 
@@ -98,7 +99,6 @@ button:hover {
   width: 40px;
   height: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
   border: 2px solid #999;
   border-radius: 50%;
