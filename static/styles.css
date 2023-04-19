@@ -84,6 +84,34 @@ button:hover {
   margin-top: 1rem;
 }
 
+.add-sample-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.add-sample {
+  background-color: transparent;
+  color: #999;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #999;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+  background-image: none;
+}
+
+.add-sample:hover {
+  color: #666;
+  border-color: #666;
+}
+
 .output-section {
   flex: 1;
   min-width: 300px;
