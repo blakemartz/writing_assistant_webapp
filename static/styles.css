@@ -13,6 +13,23 @@
   }
 }
 
+.logo-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   font-family: 'Work Sans', Arial, sans-serif;
   line-height: 1.6;
