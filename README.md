@@ -3,5 +3,5 @@ A simple webapp interface to generate text based on the writing style of submitt
 
 Work in progress.
 
-<br><a href="">
+<br><a href="https://github.com/blakemartz/writing_assistant_webapp">
 <img src='https://github.com/blakemartz/writing_assistant_webapp/blob/master/static/webappscreenshot.jpg?raw=true'></a>
