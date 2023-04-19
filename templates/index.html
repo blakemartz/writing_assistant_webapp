@@ -17,15 +17,18 @@
                         {% for i in range(1, num_text_inputs + 1) %}
                         <div class="form-group">
                             <label for="text-input-{{ i }}">Sample Text {{ i }}</label>
-                            <textarea class="form-control" id="text-input-{{ i }}" rows="3"></textarea>
+                            <textarea class="form-control" id="text-input-{{ i }}" rows="3" placeholder="{{ specific_texts[i-1] }}" data-placeholder="{{ specific_texts[i-1] }}"></textarea>
                         </div>
                         {% endfor %}
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="button" id="add-sample" class="btn btn-secondary">Add Sample</button>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" id="add-sample" class="btn btn-secondary">More Samples</button>
+                    </div>
                 </form>
             </div>
             <div class="output-section">
+                <label for="result">Generated Text</label>
                 <div class="result-window">
                     <div id="result"></div>
                     <div id="loader" class="loader hidden">
@@ -38,6 +41,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
+            $("textarea").on("focus", function () {
+                let currentPlaceholder = $(this).attr("placeholder");
+                let originalPlaceholder = $(this).data("placeholder");
+
+                if (currentPlaceholder === originalPlaceholder) {
+                    $(this).attr("placeholder", "");
+                }
+            });
+
+            $("textarea").on("blur", function () {
+                let currentPlaceholder = $(this).attr("placeholder");
+                let originalPlaceholder = $(this).data("placeholder");
+
+                if (!currentPlaceholder) {
+                    $(this).attr("placeholder", originalPlaceholder);
+                }
+            });
+
             let sampleCount = {{ num_text_inputs }};
 
             $("#text-input-form").submit(function (event) {

@@ -76,6 +76,12 @@ button:hover {
   margin-left: 20px;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
 .output-section {
   flex: 1;
   min-width: 300px;

@@ -45,6 +45,7 @@ def imitate_style(user_texts):
                        "-May sure you choose subject matter that fits in well with the provided examples. "
                        "-Be especially careful to not re-use any specific phrases from the examples. "
                        "-Do not respond with anything but the imitation itself. "
+                       "-Be very careful to not use any specific phrases from already existing creative works. "
                        "-Only respond with one new work of writing. "
                        "-Please match the length of the provided examples and be concise if necessary. "
         }
