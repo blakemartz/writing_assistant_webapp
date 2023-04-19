@@ -3,4 +3,5 @@ A simple webapp interface to generate text based on the writing style of submitt
 
 Work in progress.
 
-![alt text]([http://url/to/img.png](https://github.com/blakemartz/writing_assistant_webapp/blob/master/static/webappscreenshot.jpg?raw=True))
+<br><a href="">
+<img src='https://github.com/TheLastBen/fast-stable-diffusion/raw/main/Dreambooth/1.jpg'></a>
