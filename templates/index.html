@@ -82,6 +82,9 @@
 
                 $("#loader").removeClass("hidden");
                 $("#result").html("");
+                
+                // change button text to Generating...
+                $(".btn.btn-primary").text("Generating...");
 
                 $.ajax({
                     type: "POST",
@@ -95,6 +98,9 @@
                         let formattedText = response.generated_text.replace(/\n/g, '<br>');
                         $("#result").html(formattedText);
                         $("#loader").addClass("hidden");
+
+                        // Change the button text once the response appears
+                        $(".btn.btn-primary").text("Go Again");
                     }
                 });
             });

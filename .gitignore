@@ -1,3 +1,7 @@
-/.env
+.env
 pyvenv.cfg
 .DS_Store
+.idea/
+__pycache__/
+bin/
+lib/
