@@ -3,5 +3,10 @@ A simple webapp interface to generate text based on the writing style of submitt
 
 Work in progress.
 
-<br><a href="https://github.com/blakemartz/writing_assistant_webapp">
-<img src='https://github.com/blakemartz/writing_assistant_webapp/blob/master/static/webappscreenshot.jpg?raw=true'></a>
+<br><a href="[https://github.com/blakemartz/writing_assistant_webapp](https://echoscript.herokuapp.com/)">
+<img src='https://github.com/blakemartz/writing_assistant_webapp/blob/master/static/echoscript_screenshot.png?raw=true'></a>
+
+<br><a href="[https://github.com/blakemartz/writing_assistant_webapp](https://echoscript.herokuapp.com/)">
+<img src='https://github.com/blakemartz/writing_assistant_webapp/blob/master/static/echoscript_demo.png?raw=true?raw=true'></a>
+
+
