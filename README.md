@@ -1,5 +1,5 @@
 # writing_assistant_webapp
-A simple webapp interface to generate text based on the writing style of submitted user text using the OpenAI API.
+A simple webapp to generate new text based on the writing style of submitted user texts. Uses the OpenAI API.
 
 Work in progress.
 
