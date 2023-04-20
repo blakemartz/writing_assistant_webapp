@@ -195,6 +195,26 @@ button:hover {
   filter: brightness(80%);
 }
 
+.footer {
+  background-color: none;
+  color: #ccc !important;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer a {
+    color: #ccc; 
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #007bff; 
+    text-decoration: underline;
+}
+
 .hidden {
   display: none;
 }
