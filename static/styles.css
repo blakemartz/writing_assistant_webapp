@@ -192,6 +192,7 @@ button:hover {
 
 .btn-demo:hover {
   text-decoration: underline;
+  filter: brightness(80%);
 }
 
 .hidden {
