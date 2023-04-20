@@ -46,9 +46,9 @@
             </div>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='demoSamples.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+    <script type="module">
+        import { demoSamplesArray } from "{{ url_for('static', filename='demoSamples.js') }}";
         $(document).ready(function () {
             $("textarea").on("focus", function () {
                 let currentPlaceholder = $(this).attr("placeholder");
@@ -116,10 +116,14 @@
             });
             
             $("#demo-samples").click(function() {
+                // Randomly select a sample set
+                const randomSampleSet = demoSamplesArray[Math.floor(Math.random() * demoSamplesArray.length)];
+
+                // Create an array of the samples in the selected set
                 const demoSamples = [
-                    predefinedSamples.sample1,
-                    predefinedSamples.sample2,
-                    predefinedSamples.sample3
+                    randomSampleSet.sample1,
+                    randomSampleSet.sample2,
+                    randomSampleSet.sample3,
                 ];
                 
                 // Populate the input fields with demo samples
