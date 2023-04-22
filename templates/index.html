@@ -41,8 +41,11 @@
                     <div class="add-sample-container">
                         <div type="button" id="add-sample" class="add-sample">+</div>
                     </div>
+                    <div class="text-input-container">
+                        <input type="text" class="subject-input" id="subject-input" placeholder="Enter any subject to guide the process. (optional)">
+                    </div>
                     <div class="button-container">
-                        <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+                        <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>                    
                     </div>
                 </form>
             </div>
@@ -60,7 +63,7 @@
             </div>
         </div>
         <div class="footer">
-            <a href="https://timberstud.io/" target="_blank">timberstud.io</a>
+            <a href="https://timberstud.io/blakemartz" target="_blank">timberstud.io</a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -108,7 +111,8 @@
                     url: "{{ url_for('submit') }}",
                     contentType: "application/json",
                     data: JSON.stringify({
-                        text_inputs: text_inputs
+                        text_inputs: text_inputs, 
+                        subject_input: $('#subject-input').val()
                     }),
                     success: function (response) {
                         // Update the result container with the generated text

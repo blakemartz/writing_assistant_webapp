@@ -16,9 +16,10 @@ def home():
 def submit():
     data = request.get_json()
     user_texts = data.get('text_inputs', [])
+    subject_input = data.get('subject_input')
 
     # Call the imitate_style function with user_texts as a parameter
-    generated_text = imitate_style(user_texts)
+    generated_text = imitate_style(user_texts, subject_input)
 
     return jsonify(generated_text=generated_text)
 

@@ -79,6 +79,7 @@ textarea {
   font-family: inherit;
 }
 
+/* Button With Gradient */
 button {
   background-color: transparent;
   width: 100%;
@@ -110,12 +111,7 @@ button:hover {
   margin-left: 20px;
 }
 
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-}
-
+/* Add Sample Plus Button */
 .add-sample-container {
   display: flex;
   justify-content: center;
@@ -143,6 +139,27 @@ button:hover {
   border-color: #666;
 }
 
+/* Submit Button */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* Subject Line Text Box */
+.subject-input {
+  flex: 1;
+  width: 100%;
+  padding: 12px 12px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* Generated Output */
 .output-section {
   flex: 1;
   min-width: 300px;
@@ -170,6 +187,7 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
+/* Demo Button */
 .demo-container {
   position: absolute;
   top: 50%;

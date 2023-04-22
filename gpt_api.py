@@ -28,16 +28,19 @@ def generate_text(chat_thread, api_key):
 
 
 # Initialize the chat thread
-def imitate_style(user_texts):
+def imitate_style(user_texts, subject_input=None):
     chat_thread = [
         {
             "role": "system",
             "content": "You are a creative and talented imitation agent that can analyze example texts "
                        "and generate a completely new text as if it is the user's own writing. "
+                       "The following is your method of imitation: "
                        "-The user will provide you will examples to study. "
                        "-Take great care to learn from the provided examples "
                        "and capture the grammar usage, phrasing style, and creative style. "
                        "-You need to match the capitalization choices and grammar style of the examples. "
+                       "-Closely study the paragraph and sentence structure of the examples."
+                       "-Notice any repeating patterns in theme."
                        "-Pay close attention to the tone, vibe, and sentiment of the example texts. "
                        "-If the examples are sad, your result should be sad. "
                        "-May sure you choose subject matter that fits in well with the provided examples. "
@@ -53,11 +56,17 @@ def imitate_style(user_texts):
     for sample in user_texts:
         chat_thread.append({"role": "user", "content": f"This is an example text: \n{sample}"})
 
-    # Generate new writing call to the model - add to chat thread
-    chat_thread.append({"role": "user", "content": "Generate a creative new text that imitates and matches the style "
-                                                   "of the provided examples as instructed. "
-                        })
-
+    # Generate new writing call to the model and add to chat thread
+    #If user has not input a subject make a generic call for new text
+    if subject_input is None or subject_input == '':
+        chat_thread.append({"role": "user", "content": "Generate a creative new text that carefully imitates and matches the style "
+                                                    "of the provided examples as you were instructed."
+                            })
+    #If user has entered subject then call for new text on desired subject
+    else:
+        chat_thread.append({"role": "user", "content": f"Generate a creative new text about '{subject_input}' that carefully imitates and matches the style "
+                                                    "of the provided examples as you were instructed."
+                            })
     # Call the helper function to generate new text
     generated_text = generate_text(chat_thread=chat_thread, api_key=os.environ["OPENAI_API_KEY"])
 
