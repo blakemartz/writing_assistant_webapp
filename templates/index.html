@@ -13,13 +13,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>echoScribe</title>
-    <link href="https://fonts.googleapis.com/css2?family=WorkplusSans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
     <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <script src="https://kit.fontawesome.com/22ebf44ff2.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -52,6 +53,7 @@
             <div class="output-section">
                 <label for="result">Generated Text</label>
                 <div class="result-window">
+                    <i id="copy-icon" class="fa-regular fa-copy hidden" style="color: #6e67c8;"></i>
                     <div class="demo-container">
                         <button type="button" id="demo-samples" class="btn-demo">↗Demo</button>
                     </div>
@@ -70,6 +72,10 @@
     <script type="module">
         import { demoSamplesArray } from "{{ url_for('static', filename='demoSamples.js') }}";
         $(document).ready(function () {
+
+            // Hide the copy icon initially
+            $("#copy-icon").addClass("hidden");
+
             $("textarea").on("focus", function () {
                 let currentPlaceholder = $(this).attr("placeholder");
                 let originalPlaceholder = $(this).data("placeholder");
@@ -100,6 +106,7 @@
                     text_inputs.push($("#text-input-" + i).val());
                 }
 
+                $("#copy-icon").addClass("hidden");
                 $("#loader").removeClass("hidden");
                 $("#result").html("");
                 
@@ -119,6 +126,7 @@
                         let formattedText = response.generated_text.replace(/\n/g, '<br>');
                         $("#result").html(formattedText);
                         $("#loader").addClass("hidden");
+                        $("#copy-icon").removeClass("hidden");
 
                         // Change the button text once the response appears
                         $(".btn.btn-primary").text("Regenerate");
@@ -156,6 +164,20 @@
                 $("#submit-btn").trigger("click");
             });
 
+
+            // Copy the generated text to clipboard when the icon is clicked
+            $("#copy-icon").click(function() {
+                const text = $("#result").text();
+                const el = document.createElement('textarea');
+                el.value = text;
+                el.setAttribute('readonly', '');
+                el.style.position = 'absolute';
+                el.style.left = '-9999px';
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+            });
         });
     </script>
 </body>

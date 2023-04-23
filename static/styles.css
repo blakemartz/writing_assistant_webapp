@@ -29,6 +29,7 @@
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .logo-container img {
@@ -122,7 +123,7 @@ button:hover {
 .add-sample {
   background-color: transparent;
   color: #ccc;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   width: 40px;
   height: 40px;
   display: flex;
@@ -165,6 +166,22 @@ button:hover {
   min-width: 300px;
   overflow-y: auto;
   margin-right: 20px;
+}
+
+#copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+#copy-icon:hover {
+  color: #666;
+  opacity: 1;
 }
 
 /* Result window */
@@ -212,6 +229,7 @@ button:hover {
 .btn-demo:hover {
   text-decoration: underline;
   filter: brightness(80%);
+  color: #6e67c8;
 }
 
 .footer {
@@ -231,7 +249,7 @@ button:hover {
     text-decoration: none;
 }
 .footer a:hover {
-    color: #007bff; 
+    color: #6e67c8; 
     text-decoration: underline;
 }
 
