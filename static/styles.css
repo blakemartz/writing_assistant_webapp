@@ -180,7 +180,7 @@ button:hover {
 }
 
 #copy-icon:hover {
-  color: #666;
+  color: #6e67c8;
   opacity: 1;
 }
 
@@ -254,5 +254,5 @@ button:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
