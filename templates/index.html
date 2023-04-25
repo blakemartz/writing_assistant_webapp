@@ -167,7 +167,7 @@
 
             // Copy the generated text to clipboard when the icon is clicked
             $("#copy-icon").click(function() {
-                const text = $("#result").text();
+                const text = $("#result").html().replace(/<br>/g, '\n');
                 const el = document.createElement('textarea');
                 el.value = text;
                 el.setAttribute('readonly', '');
