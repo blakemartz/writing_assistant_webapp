@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+API_KEY = os.environ["OPENAI_API_KEY"]
 MODEL = "gpt-3.5-turbo"
 MAX_TOKENS = 1000
 TEMPERATURE = 1.0
@@ -68,6 +69,6 @@ def imitate_style(user_texts, subject_input=None):
                                                     "of the provided examples as you were instructed."
                             })
     # Call the helper function to generate new text
-    generated_text = generate_text(chat_thread=chat_thread, api_key=os.environ["OPENAI_API_KEY"])
+    generated_text = generate_text(chat_thread=chat_thread, api_key=API_KEY)
 
     return generated_text
