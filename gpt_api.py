@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.environ["OPENAI_API_KEY"]
-MODEL = "gpt-3.5-turbo"
+MODEL = "gpt-4"
 MAX_TOKENS = 1000
 TEMPERATURE = 1.0
 
