@@ -5,22 +5,22 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.environ["OPENAI_API_KEY"]
-MODEL = "gpt-4"
+MODEL = "gpt-3.5-turbo"
 MAX_TOKENS = 1000
 TEMPERATURE = 1.0
 
 
-def generate_text(chat_thread, api_key, model_selection):
+def generate_text(chat_thread, api_key):
     openai.api_key = api_key
 
     response = openai.ChatCompletion.create(
-        model=model_selection,
+        model=MODEL,
         messages=chat_thread,
         max_tokens=MAX_TOKENS,
         n=1,
         temperature=TEMPERATURE,
     )
-    print(model_selection)
+
     if response.choices:
         generated_text = response.choices[0].message['content']
         return generated_text.strip()
@@ -29,7 +29,7 @@ def generate_text(chat_thread, api_key, model_selection):
 
 
 # Initialize the chat thread
-def imitate_style(user_texts, subject_input=None, model_selection=MODEL):
+def imitate_style(user_texts, subject_input=None):
     chat_thread = [
         {
             "role": "system",
@@ -65,11 +65,10 @@ def imitate_style(user_texts, subject_input=None, model_selection=MODEL):
                             })
     #If user has entered subject then call for new text on desired subject
     else:
-        chat_thread.append({"role": "user", "content": f"Generate a creative new text about the theme/subject of '{subject_input}', "
-                            "but most importantly carefully imitates the writing style of the provided examples as you know how to do well."
+        chat_thread.append({"role": "user", "content": f"Generate a creative new text about '{subject_input}' that carefully imitates and matches the style "
+                                                    "of the provided examples as you were instructed."
                             })
-        print(subject_input)
     # Call the helper function to generate new text
-    generated_text = generate_text(chat_thread=chat_thread, api_key=API_KEY, model_selection=model_selection)
+    generated_text = generate_text(chat_thread=chat_thread, api_key=API_KEY)
 
     return generated_text

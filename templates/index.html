@@ -45,15 +45,8 @@
                     <div class="text-input-container hidden">
                         <input type="text" class="subject-input" id="subject-input" placeholder="(Optional) Enter a guiding subject.">
                     </div>
-                    <div class="button-container"> 
-                        <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button> 
-                        <div class="model-selection-container">
-                            <label for="model-selection">Select Model:</label>
-                            <select id="model-selection">
-                                <option value="gpt-3.5-turbo">GPT-3.5 (speed)</option>
-                                <option value="gpt-4">GPT-4 (creativity)</option>
-                            </select>
-                        </div>                   
+                    <div class="button-container">
+                        <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>                    
                     </div>
                 </form>
             </div>
@@ -79,19 +72,6 @@
     <script type="module">
         import { demoSamplesArray } from "{{ url_for('static', filename='demoSamples.js') }}";
         $(document).ready(function () {
-            
-            //show subject line input if gpt-4 is selected
-            $("#model-selection").change(function() {
-                let selectedModel = $(this).val();
-
-                if (selectedModel == 'gpt-4') {
-                    $(".text-input-container").removeClass("hidden");
-                //hide subject input and erase subject field content    
-                } else if (selectedModel == 'gpt-3.5-turbo') {
-                    $(".text-input-container").addClass("hidden");
-                    $("#subject-input").val('');
-                }
-            });
 
             // Hide the copy icon initially
             $("#copy-icon").addClass("hidden");
@@ -133,17 +113,13 @@
                 // change button text to Generating...
                 $(".btn.btn-primary").text("Generating...");
 
-                // capture model selection form drop down menu
-                let modelSelection = $("#model-selection").val();
-
                 $.ajax({
                     type: "POST",
                     url: "{{ url_for('submit') }}",
                     contentType: "application/json",
                     data: JSON.stringify({
                         text_inputs: text_inputs, 
-                        subject_input: $('#subject-input').val(),
-                        model_selection: modelSelection
+                        subject_input: $('#subject-input').val()
                     }),
                     success: function (response) {
                         // Update the result container with the generated text

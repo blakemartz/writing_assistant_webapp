@@ -13,7 +13,7 @@ def test_generate_text():
             MagicMock(message={"content": "This is the generated text."})
         ])
 
-        generated_text = generate_text(chat_thread, "fake_api_key", "gpt-3.5-turbo")
+        generated_text = generate_text(chat_thread, "fake_api_key")
 
     assert generated_text == "This is the generated text."
 
@@ -28,12 +28,10 @@ def test_imitate_style():
 
     subject_input = "testing subject"
 
-    model_selection = "gpt-4"
-
     with patch("gpt_api.generate_text") as mock_generate_text:
         mock_generate_text.return_value = "This is the generated text imitating the style of the examples."
 
-        generated_text = imitate_style(user_texts, subject_input, model_selection)
+        generated_text = imitate_style(user_texts, subject_input)
 
     assert generated_text == "This is the generated text imitating the style of the examples."
 
