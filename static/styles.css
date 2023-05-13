@@ -140,11 +140,15 @@ button:hover {
   border-color: #666;
 }
 
-/* Submit Button */
+/* Submit section */
 .button-container {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+#submit-btn {
+  margin-right: 60px;
 }
 
 /* Subject Line Text Box */
