@@ -15,9 +15,10 @@ def submit():
     data = request.get_json()
     user_texts = data.get('text_inputs', [])
     subject_input = data.get('subject_input')
+    model_selection = data.get('model_selection', 'gpt-4')
 
     # Call the imitate_style function with user_texts as a parameter
-    generated_text = imitate_style(user_texts, subject_input)
+    generated_text = imitate_style(user_texts, subject_input, model_selection)
 
     return jsonify(generated_text=generated_text)
 

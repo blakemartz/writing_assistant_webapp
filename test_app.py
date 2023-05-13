@@ -23,6 +23,7 @@ def test_submit(client):
     test_data = {
         "text_inputs": ["Text 1", "Text 2", "Text 3"],
         "subject_input": "Subject",
+        "model_selection": "gpt-4",
     }
     response = client.post('/submit', data=json.dumps(test_data), content_type='application/json')
 
