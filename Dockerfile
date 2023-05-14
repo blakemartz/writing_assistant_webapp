@@ -8,4 +8,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
-CMD ["gunicorn", "-b", ":5000", "app:app"]
+CMD ["gunicorn", "-t", "120", "-b", ":5000", "app:app"]
