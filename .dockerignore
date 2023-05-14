@@ -1,0 +1,9 @@
+.git/
+.env
+*.pyc
+__pycache__/
+lib/
+bin/
+pyvenv.cfg
+.idea/
+.DS_Store
